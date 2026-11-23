@@ -2,7 +2,7 @@ import { mkdirSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 
 const joke =
-  "I asked my AI coding agent to explain its code and it said 'it works' — so now we both have imposter syndrome, but only one of us can hit 'regenerate' on it.";
+  "My AI coding agent types faster than me, debugs faster than me, and just asked for the demo to be pre-recorded so it never has to watch a human think.";
 
 const line = joke.replace(/\s+/g, " ").trim();
 const count = [...line].length;
@@ -18,4 +18,5 @@ const dir = process.env.MAKEFUN_OUTPUT_DIR ?? "/output";
 mkdirSync(dir, { recursive: true });
 writeFileSync(join(dir, "entry.txt"), line + "\n", "utf8");
 
+console.log(line);
 console.log(`chars=${count}`);
